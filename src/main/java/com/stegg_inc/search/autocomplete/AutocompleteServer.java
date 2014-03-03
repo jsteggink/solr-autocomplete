@@ -44,20 +44,19 @@ public class AutocompleteServer extends Verticle {
 		try {
 			appConfig = container.config();
 			
-			conf_zkhosts = (String)appConfig.getValue("zkHosts");
-			conf_collection = (String)appConfig.getValue("defaultCollection");
-			conf_solrserver = (String)appConfig.getValue("solrServer");
-			conf_contimeout = (int)appConfig.getValue("connectionTimeout");
-			conf_sotimeout = (int)appConfig.getValue("socketTimeout");
+			conf_zkhosts = appConfig.getString("zkHosts");
+			conf_collection = appConfig.getString("defaultCollection");
+			conf_solrserver = appConfig.getString("solrServer");
+			conf_contimeout = appConfig.getInteger("connectionTimeout");
+			conf_sotimeout = appConfig.getInteger("socketTimeout");
 			
-			
-			if (!((String)appConfig.getValue("listenHost")).isEmpty())
+			if (appConfig.getString("listenHost") != null)
 			{
-				conf_listenHost = (String)appConfig.getValue("listenHost");
+				conf_listenHost = appConfig.getString("listenHost");
 			}
-			if((Integer)appConfig.getValue("listenPort") != null)
+			if(appConfig.getInteger("listenPort") != null)
 			{
-				conf_listenPort = (int)appConfig.getValue("listenPort");
+				conf_listenPort = appConfig.getInteger("listenPort");
 			}
 				
 			if (conf_zkhosts != null) {
