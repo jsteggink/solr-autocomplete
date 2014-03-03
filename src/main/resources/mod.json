@@ -1,0 +1,10 @@
+{
+
+  "main":"com.stegg_inc.search.autocomplete.AutocompleteServer",
+  
+  "auto-redeploy": true,
+
+  "description":"Autocomplete server using Solr",
+  "licenses": ["The MIT License"],
+  "author": "Jeroen Steggink"
+}

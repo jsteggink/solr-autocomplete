@@ -1,0 +1,8 @@
+{
+"listenHost": "localhost",
+"listenPort": 8081,
+"solrServer": "http://127.0.0.1:8983/solr",
+"defaultCollection": "collection",
+"connectionTimeout": 2000000,
+"socketTimeout": 2000000
+}
